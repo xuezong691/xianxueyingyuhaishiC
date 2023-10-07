@@ -1,1 +1,191 @@
+1.
+#第一种
+a=int(input("第一个整数："))
+b=int(input("第二个整数："))
+c=int(input("第三个整数："))
+num_max=max(a,b,c)
+if num_max==a:
+    num_1=a
+    num_max=max(b,c)
+    if num_max==b:
+        num_2=b
+        num_3=c
+    if num_max==c:
+        num_2=c
+        num_3=b    
+if num_max==b:
+    num_1=b
+    num_max=max(a,c)
+    if num_max==a:
+        num_2=a
+        num_3=c
+    if num_max==c:
+        num_2=c
+        num_3=a
+ 
+if num_max==c:
+    num_1=c
+    num_max=max(b,a)
+    if num_max==b:
+        num_2=b
+        num_3=a
+    if num_max==a:
+        num_2=a
+        num_3=b 
+print(num_1,num_2,num_3)
+
+
+
+#第二种
+a=int(input("随便一个整数"))
+b=int(input("随便一个整数"))
+c=int(input("随你便一个整数"))
+def bidaxiao(x,y):
+    if x>y:
+        return True
+    else:
+        return False
+if bidaxiao(a,b) is True:
+    num_1=a
+    num_2=b
+    if bidaxiao(a,c) is False:
+        num_0=c
+        print(num_0,num_1,num_2)
+    elif bidaxiao(b,c) is True:
+        num_3=c
+        print(num_1,num_2,num_3)
+    else:
+        num_15=c
+        print(num_1,num_15,num_2)    
+
+else:
+    num_1=b
+    num_2=a   
+    if bidaxiao(b,c) is False:
+        num_0=b
+        print(num_0,num_1,num_2)
+    elif bidaxiao(a,c) is True:
+        num_3=c
+        print(num_1,num_2,num_3)
+    else:
+        num_15=c 
+        print(num_1,num_15,num_2)   
+
+
+
+#第三种
+a=int(input("第一个整数："))
+b=int(input("第二个整数："))
+c=int(input("第三个整数："))
+list_1=[a,b,c]
+for t in range(len(list_1)):
+    for n in range(t+1,len(list_1)):
+        if list_1[t]<list_1[n]:
+            list_1[t],list_1[n]=list_1[n],list_1[t]
+print(list_1)        
+
+2.
+for i in range(1,10):
+    for j in range(1,10):
+       
+        if j==9:
+            print(format(i*j,"3d"),end="\n")
+        
+        else:    
+            print(format(i*j,"3d"),end="")
+
+
+
+#加了点
+print(
+
+
+
+
+
+)
+print("   1  2  3  4  5  6  7  8  9")
+print("-----------------------------")
+for i in range(1,10):
+    for j in range(1,10):
+        if j==1:
+           print(i,end="")
+        if j==9:
+            print(format(i*j,"3d"),end="\n")
+           
+       
+        else:    
+            print(format(i*j,"3d"),end="")
+
+3.
+x=str(input("随便写一串英文："))
+list1=[]
+if x.find("ol")==-1:
+    print("海海害，没有ol哦")
+else:    
+  for string in x:
+    if string=="o":
+       list1.append("f")
+       list1.append("z")
+       list1.append("u")
+    elif string!="l":
+       list1.append(string)
+  reverse=list(reversed(list1))
+  result="".join(reverse)  
+  print(result) 
+
+4.
+list=[1,6,9,4,"hello","嗨嗨害"]
+list_1=[]
+for i in list:
+    if isinstance(i,int) is False:
+        pass
+    else:
+        list_1.append(i)
+for t in range(len(list_1)):
+    for n in range(t+1,len(list_1)):
+        if list_1[t]>list_1[n]:
+            list_1[t],list_1[n]=list_1[n],list_1[t]
+print(list_1)    
+
+5.
+dict={"114514":"田所浩二","1023014181":"薛总"}
+remove_the_keys=[]
+for x in dict.keys():
+    if x[-1] in {"1","3","5","7","9"}:
+        remove_the_keys.append(x)
+for y in remove_the_keys:
+    del dict[y]     
+print(dict)
+
+6.
+the_list=[6,6,6,5,8,18,444,6,8,8,1,3,5,1,1,4,5,1,4]
+def count(list):
+  dict={}
+  for i in the_list:
+    if i in dict:
+        dict[i]+=1
+    else:
+        dict[i]=1
+  return dict      
+print(count(the_list))  
+
+7.
+class old_eight_grocery:
+    def __init__(self):
+       self.__information={"数量":8,"商品名称":"mizhi_small_hunberger","price_for_one":8,"amount":88,"amount_left":8} 
+    def display(self):
+        return self.__information
+    def income(self):
+        add=(self.__information["amount"]-self.__information["amount_left"])*self.__information["price_for_one"]
+        return add
+    def setdata(self):
+        self.__information["amount_left"]=int(input("剩多少小汉堡"))
+hanbao=old_eight_grocery()
+hanbao.setdata()
+print("\n")
+print(hanbao.display())
+print("\n")
+print("已经卖了",hanbao.income(),"元")
+
 
