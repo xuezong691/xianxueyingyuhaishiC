@@ -81,4 +81,14 @@ for t in range(len(list_1)):
     for n in range(t+1,len(list_1)):
         if list_1[t]<list_1[n]:
             list_1[t],list_1[n]=list_1[n],list_1[t]
-print(list_1)                 
+print(list_1)     
+
+
+#第四种
+a=int(input("第一个整数："))
+b=int(input("第二个整数："))
+c=int(input("第三个整数："))
+list_1=[a,b,c]
+list_1.sort(,,True)
+print(list_1)
+            
